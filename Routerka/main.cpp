@@ -8,14 +8,11 @@ int main()
     int feulCostPart = 5;
     int carRepairCostPart = 5;
     int taxPart = 5;
-    int driverSalary;
-    int feulCost;
-    int carRepairCost;
-    int tax;
+
     int passengersEntered;
     int passengersLeaved;
     int passengersCount = 0;
-    int yourProfit;
+    int yourProfit = 0;
 
 
     std::string stop1 = "Programmer's street";
@@ -59,17 +56,16 @@ int main()
     cash += passengersEntered*ticketCost;
     std::cout << "Leaving " << stop4 << ". There is "<< passengersCount << " in the cabin.\n";
 
-    driverSalary = (cash/driverSalaryPart);
-    feulCost = (cash/feulCostPart);
-    carRepairCost = (cash/carRepairCostPart);
-    tax = (cash/taxPart);
-    yourProfit = cash - driverSalary - feulCost - carRepairCost - taxPart;
-
     std::cout << "Total cash: " << cash << "\n";
-    std::cout << "Driver salary: " << driverSalary << "\n";
-    std::cout << "Fuel cost: " << feulCost << "\n";
-    std::cout << "Tax: " << tax << "\n";
-    std::cout << "Car repair cost: " << carRepairCost << "\n";
+    std::cout << "Driver salary: " << cash/driverSalaryPart << "\n";
+    std::cout << "Fuel cost: " << cash/feulCostPart << "\n";
+    std::cout << "Tax: " << cash/taxPart << "\n";
+    std::cout << "Car repair cost: " << cash/carRepairCostPart << "\n";
+    yourProfit = cash - cash/driverSalaryPart;
+    yourProfit -= cash/feulCostPart;
+    yourProfit -= cash/taxPart;
+    yourProfit -= cash/carRepairCostPart;
+
     std::cout << "Your total profit: " << yourProfit << "\n";
 
     return 0;
