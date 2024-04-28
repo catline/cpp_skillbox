@@ -7,11 +7,13 @@ int main()
     int nightFade = 20; // размер съедаемого гусеницами бамбука за одну ночь;
     int beginHeight = 100; // начальная высота бамбука.
     int CurrentHeight = 0;
+    int days;
 
-    CurrentHeight = beginHeight + dailyGrowth - nightFade;
-    CurrentHeight += dailyGrowth - nightFade;
-    CurrentHeight += dailyGrowth / 2;
+    std::cout << "How many days bamboo grew: ";
+    std::cin >> days;
 
-    std::cout << "In the middle of third day height of bamboo will be: " << CurrentHeight;
+    CurrentHeight+= beginHeight + (dailyGrowth - nightFade) * days + dailyGrowth / 2;
+
+    std::cout << "In the middle of the day " << days << " height of bamboo will be: " << CurrentHeight;
     return 0;
 }
